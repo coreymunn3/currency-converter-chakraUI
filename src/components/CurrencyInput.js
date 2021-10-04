@@ -1,8 +1,9 @@
 import { InputGroup, InputLeftAddon, Input } from '@chakra-ui/input';
 import { Select } from '@chakra-ui/select';
-import { useState } from 'react';
+import { useToast } from '@chakra-ui/toast';
 
 const CurrencyInput = (props) => {
+  const toast = useToast();
   const {
     currencyList,
     currencyType,
@@ -25,7 +26,15 @@ const CurrencyInput = (props) => {
     }
 
     if (!passedValidation) {
-      alert('You may only enter a Number');
+      toast({
+        position: 'top-right',
+        title: 'Text is not allowed',
+        description: 'Only numeric inputs are valid',
+        status: 'info',
+        duration: 3000,
+        isClosable: true,
+        variant: 'subtle',
+      });
     }
   };
 
