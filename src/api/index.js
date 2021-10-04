@@ -11,7 +11,6 @@ import axios from 'axios';
 // };
 export const getRates = async ({ queryKey }) => {
   const [_, base] = queryKey;
-  console.log(base);
   const { data } = await axios.get(
     `https://v6.exchangerate-api.com/v6/8d8c27e3d1452afe3748a133/latest/${base}`
   );

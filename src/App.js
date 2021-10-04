@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Stack, Heading, Divider, Box, Flex } from '@chakra-ui/layout';
+import { Stack, Heading, Divider, Box, Flex, Text } from '@chakra-ui/layout';
 import { Skeleton } from '@chakra-ui/skeleton';
 import { Layout, ThemeToggle, CurrencyInput } from './components';
 import { IconButton } from '@chakra-ui/button';
@@ -77,6 +77,14 @@ function App() {
             disabled={true}
           />
         </Skeleton>
+        {ratesQuery.data && (
+          <Text fontStyle='italic' color='gray.400'>
+            Last Updated{' '}
+            {new Date(
+              ratesQuery.data.time_last_update_unix * 1000
+            ).toLocaleString('en-US')}
+          </Text>
+        )}
       </Stack>
     </Layout>
   );
