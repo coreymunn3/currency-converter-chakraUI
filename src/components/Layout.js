@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
             {children}
           </Box>
         </Flex>
-        <Box>
+        <Box my={4}>
           <Flex
             p={2}
             direction={['column', 'row']}
