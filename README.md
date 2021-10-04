@@ -2,7 +2,7 @@
 
 [Live Site](https://currency-converter-chakra-ui.vercel.app/)
 
-![Imgur](https://imgur.com/a/ScWJ0Vt)
+![Imgur](https://i.imgur.com/S7g1vNi.png)
 
 This application allows a user to convert an amount of one currency into another currency. When the Source currency amount, the source currency type or the destination currency type is changed, the application will update with a new calculation. Please note, only numbers are allowed in the inputs.
 
