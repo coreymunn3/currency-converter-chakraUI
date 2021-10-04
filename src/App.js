@@ -14,7 +14,9 @@ function App() {
   const [toCurrency, setToCurrency] = useState('EUR');
   const [toCurrencyAmount, setToCurrencyAmount] = useState(0);
 
-  const ratesQuery = useQuery(['rates', fromCurrency], getRates);
+  const ratesQuery = useQuery(['rates', fromCurrency], getRates, {
+    staleTime: 10 * 60 * 1000, // 10 minutes
+  });
 
   const swap = () => {
     let temp = toCurrency;
@@ -26,7 +28,6 @@ function App() {
   useEffect(() => {
     if (ratesQuery.data) {
       const currencyOptions = Object.keys(ratesQuery.data.conversion_rates);
-      // console.log(currencyOptions);
       setCurrencyList(currencyOptions);
     }
   }, [ratesQuery.data]);
